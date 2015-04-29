@@ -1,0 +1,77 @@
+<h3 class="page-header">Liste des evenement</h3>
+
+
+
+<div ng-repeat="event in events">
+		<li class="list-group-item"> <strong>{{event.name  }}</strong> {{event.desc}} {{  event.price  }}&#8364; ->   Le  {{event.date}} 
+		<div class="pull-right">
+		<button  class="btn btn-primary" ng-show="!isJoined(event)" ng-click='registerGamer(event)'> Register</button>
+		<button class="btn btn-success" ng-show="isJoined(event) && isStarted(event)"ng-click='playEvent(event)'> Play!</button>
+		</div>
+		<div style="clear:both"></div>
+		
+		
+		
+		</li>
+</div>
+	
+
+</br>
+<form ng-submit="addEvent()" class="form-horizontal">
+	<div class='form-group'>
+		<label class="control-label col-md-2"> Nom : </label>
+		<div class="col-md-4">
+			<input class="form-control" ng-model="event.name" type="text" name="nomEvent" maxlength="50"  required />
+		</div>
+	</div>
+	
+	<div class='form-group'>
+		<label class="control-label col-md-2">  Type de jeu : </label>
+		<div class="col-md-4">
+		<select class="form-control" ng-model="event.url" name="UrlEvent" required>
+			<option value="devine">devine</option>
+		</select>
+		</div>
+	</div>
+	
+	<div class='form-group'>
+		<label class="control-label col-md-2"> Description : </label>
+		<div class="col-md-4">
+			<input class="form-control" ng-model="event.desc" type="text" name="descriptionEvent" required />
+		</div>
+	</div>
+	
+	<div class='form-group'>
+		<label class="control-label col-md-2"> Date : </label>
+		<div class="col-md-4">
+			<input class="datepicker form-control"  placeholder="dd/mm/yyyy" style="background:white;cursor:pointer" ng-model="event.date" type="text" name="dateEvent" maxlength="50" required />
+		</div>
+	</div>
+	
+	<div class='form-group'>
+		<label class="control-label col-md-2"> Place : </label>
+		<div class="col-md-4">
+			<input class="form-control" ng-model="event.place" type="text" name="PlaceEvent" maxlength="50" required/>
+		</div>
+	</div>
+	
+	<div class='form-group'>
+		<label class="control-label col-md-2"> longitude : </label>
+		<div class="col-md-4">
+			<input class="form-control" ng-model="event.longitude" type="text" name="Placelongitude"  value="-1.5" maxlength="50" required/>
+		</div>
+	</div>
+	
+	<div class='form-group'>
+		<label class="control-label col-md-2"> latitude : </label>
+		<div class="col-md-4">
+			<input class="form-control" ng-model="event.latitude" type="text" name="Placelatitude"  value="47,2" maxlength="50" required/>
+		</div>
+	</div>
+	<div>
+	*longitude et latitude correspondent a l'endroit ou le joueur devra se trouver pour commencer a jouer
+	</div>
+	
+	<input type="submit" class="btn btn-primary" value="Creer l'evenement" />
+	
+</form>

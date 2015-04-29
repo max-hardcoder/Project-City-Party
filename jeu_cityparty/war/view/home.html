@@ -1,0 +1,29 @@
+<div class='container-full'>
+<div class='row'></div>
+
+	<nav class='col-md-2 menu '>
+		<img class='img-rounded img-responsive' ng-src='{{user.picture}}'/>
+		
+		<ul class="list-unstyled">
+
+		<li class="list-group-item reverse" ng-click='logout()' >Deconnexion</li>
+		</ul>
+	</nav>
+
+	<div class="col-md-10">
+		<h1 class='page-header'>Welcome {{user.name}}!</h1>
+
+		<div ui-view></div>
+		
+
+	</div>
+
+
+</div>
+
+
+
+
+
+
+</div>

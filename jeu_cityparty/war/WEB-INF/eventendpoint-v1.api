@@ -1,0 +1,326 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://project-city-party.appspot.com/_ah/api",
+  "name" : "eventendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://project-city-party.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "eventendpoint.getEvent" : {
+      "path" : "event/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "402784977642-jpudq4gu2tp4jti2kp3th30ob0sheb9q.apps.googleusercontent.com" ],
+      "rosyMethod" : "fr.cityparty.EventEndpoint.getEvent",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "eventendpoint.updateEvent" : {
+      "path" : "event",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "402784977642-jpudq4gu2tp4jti2kp3th30ob0sheb9q.apps.googleusercontent.com" ],
+      "rosyMethod" : "fr.cityparty.EventEndpoint.updateEvent",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "eventendpoint.ajoutPlayer" : {
+      "path" : "ajoutPlayer/{id}/{user}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "402784977642-jpudq4gu2tp4jti2kp3th30ob0sheb9q.apps.googleusercontent.com" ],
+      "rosyMethod" : "fr.cityparty.EventEndpoint.ajoutPlayer",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          },
+          "user" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "eventendpoint.insertEvent" : {
+      "path" : "event",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "402784977642-jpudq4gu2tp4jti2kp3th30ob0sheb9q.apps.googleusercontent.com" ],
+      "rosyMethod" : "fr.cityparty.EventEndpoint.insertEvent",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "eventendpoint.removeEvent" : {
+      "path" : "event/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "402784977642-jpudq4gu2tp4jti2kp3th30ob0sheb9q.apps.googleusercontent.com" ],
+      "rosyMethod" : "fr.cityparty.EventEndpoint.removeEvent",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "eventendpoint.registerUser" : {
+      "path" : "registerUser",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "402784977642-jpudq4gu2tp4jti2kp3th30ob0sheb9q.apps.googleusercontent.com" ],
+      "rosyMethod" : "fr.cityparty.EventEndpoint.registerUser",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "eventendpoint.ajouterScore" : {
+      "path" : "ajouterScore/{score}/{event}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "402784977642-jpudq4gu2tp4jti2kp3th30ob0sheb9q.apps.googleusercontent.com" ],
+      "rosyMethod" : "fr.cityparty.EventEndpoint.ajouterScore",
+      "request" : {
+        "parameters" : {
+          "score" : {
+            "type" : "int64",
+            "required" : true
+          },
+          "event" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "eventendpoint.listEvent" : {
+      "path" : "event",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "402784977642-jpudq4gu2tp4jti2kp3th30ob0sheb9q.apps.googleusercontent.com" ],
+      "rosyMethod" : "fr.cityparty.EventEndpoint.listEvent",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Event" : {
+        "id" : "Event",
+        "type" : "object",
+        "properties" : {
+          "key" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "place" : {
+            "type" : "string"
+          },
+          "date" : {
+            "type" : "string"
+          },
+          "players" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "desc" : {
+            "type" : "string"
+          },
+          "longitude" : {
+            "type" : "string"
+          },
+          "latitude" : {
+            "type" : "string"
+          },
+          "url" : {
+            "type" : "string"
+          }
+        }
+      },
+      "CityUser" : {
+        "id" : "CityUser",
+        "type" : "object",
+        "properties" : {
+          "key" : {
+            "type" : "string"
+          },
+          "mail" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Score" : {
+        "id" : "Score",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "user" : {
+            "type" : "string"
+          },
+          "score" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "game" : {
+            "type" : "string",
+            "format" : "int64"
+          }
+        }
+      },
+      "CollectionResponse_Event" : {
+        "id" : "CollectionResponse_Event",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Event"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "fr.cityparty.EventEndpoint.getEvent" : {
+        "response" : {
+          "$ref" : "Event"
+        }
+      },
+      "fr.cityparty.EventEndpoint.updateEvent" : {
+        "request" : {
+          "$ref" : "Event"
+        },
+        "response" : {
+          "$ref" : "Event"
+        }
+      },
+      "fr.cityparty.EventEndpoint.ajoutPlayer" : {
+        "response" : {
+          "$ref" : "Event"
+        }
+      },
+      "fr.cityparty.EventEndpoint.insertEvent" : {
+        "request" : {
+          "$ref" : "Event"
+        },
+        "response" : {
+          "$ref" : "Event"
+        }
+      },
+      "fr.cityparty.EventEndpoint.removeEvent" : {
+      },
+      "fr.cityparty.EventEndpoint.registerUser" : {
+        "response" : {
+          "$ref" : "CityUser"
+        }
+      },
+      "fr.cityparty.EventEndpoint.ajouterScore" : {
+        "response" : {
+          "$ref" : "Score"
+        }
+      },
+      "fr.cityparty.EventEndpoint.listEvent" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Event"
+        }
+      }
+    }
+  }
+}
